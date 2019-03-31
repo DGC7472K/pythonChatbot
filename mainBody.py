@@ -1,9 +1,9 @@
-import time #REQUIRED FOR REAL TIME IMPORT
-import random #REQUIRED FOR RANDOM SELECTION
-import requests #REQUIRED FOR WEATHER API
-import datetime #REQUIRED TO IMPORT TODAYS DATE
+import time #Real time functions
+import random #Randomise output
+import requests #Initialise with "pip install requests" // external library for API
+import datetime #Import todays time and date
 
-def recallAtRand(): #RANDOM AGE GENERATOR // USED CHAPTER 10 OF THINK PYTHON: HOW TO THINK LIKE A COMPUTER SCIENTIST 
+def recallAtRand(): #Random chatbot age generator
   makeRequest= input("Would you like to know how old i am?\n")
   textAge= ["18","20","22","24","26","28","30","32","34","36","38","40","42"]
   if makeRequest== ("Yes")or makeRequest==("YES")or makeRequest==("yes")or makeRequest==("ok")or makeRequest==("OK"):
@@ -14,6 +14,7 @@ def recallAtRand(): #RANDOM AGE GENERATOR // USED CHAPTER 10 OF THINK PYTHON: HO
     print("Fine..")
   else:
     print("That doesn't answer my question, moving on "+userName+".. I'm ",random.choice(textAge))
+    
 def howAreYou(): #ADDITIONAL QUESTIONS
   myValue = str(input("How are you today?\n"))
   inputValues= ["Alright", "alright", "ALRIGHT", "Good", "good", "GOOD", "Ok", "ok", "OK", "Excellent", "excellent", "EXCELLENT"]
@@ -23,6 +24,7 @@ def howAreYou(): #ADDITIONAL QUESTIONS
        print("I know that feeling "+userName+".. Hopefully the sun will come out later and change things..")
   userPlans = input("What are you upto today?\n")
   print("Ok, sounds like a plan to me.. "+userName)
+  
 def weatherAPI(): #WEATHER API
   queWeath = input("Would you like to know what the weather is doing today?\n")
   if queWeath == ("Yes")or queWeath==("yes")or queWeath==("YES")or queWeath==("Y")or queWeath==("y"):
@@ -41,7 +43,8 @@ def weatherAPI(): #WEATHER API
     else:
       print("...?")
   else:
-    print("Ok, that doesn't really answer my question.. ") 
+    print("Ok, that doesn't answer my question.. ")
+    
 def guessMyNum(): #GUESS THE NUMBER
   print("I'm thinking of a number between 1 and 100")
   print("What number am i thinking of "+userName+"?")
@@ -56,6 +59,7 @@ def guessMyNum(): #GUESS THE NUMBER
     g = int(input())
     myAttempts +=1
   print("it took you ",myAttempts," attempts to guess my number "+userName+"!")
+  
 def jobStatus(): #EMPLOYMENT // TOOK INSPIRATION FROM CODIO PRACTICE SESSIONS
   jobQuest = str(input("Do you have a job? "+"\n"))
   jobAns= ["Yes", "yes", "Y", "y", "Yeah", "yeah"]
@@ -123,7 +127,8 @@ def jobStatus(): #EMPLOYMENT // TOOK INSPIRATION FROM CODIO PRACTICE SESSIONS
     userInstructions(90000)
   else:
     print("Nevermind, moving on.."+"\n")
-    time.sleep(1)      
+    time.sleep(1)
+    
 def schoolSubjects():#QUESTION ON SCHOOL SUBJECTS
   askQ = input("I need to ask you a few quick questions if thats ok?\n")
   if askQ==("Yes")or askQ==("YES")or askQ==("yes"): 
@@ -197,6 +202,7 @@ else: # RANDOM OPERATOR SELECTION // USED CHAPTER 10 OF THINK PYTHON: HOW TO THI
         time.sleep(1)
       else:
         print("Good guess! but not quite..")
+        
         #CALLING ON FUNCTIONS FOLLOWING INTRODUCTORY QUESTIONS
         recallAtRand() #OPERATOR CREDENTIALS
         time.sleep(1) 
